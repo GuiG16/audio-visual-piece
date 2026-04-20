@@ -4,7 +4,7 @@ let hands = [];
 let indexPreviousX;
 let indexPreviousY;
 let hue = 0;
-let drawing;
+let drawing = [];
 let showVideo = true;
 let sfx;
 
