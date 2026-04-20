@@ -8,7 +8,7 @@ let showVideo = true;
 let sfx;
 
 function preload() {
-  sfx = loadSound('Assets/611475__jwsounddesign__woosh-long-cinematic.wav');
+  sfx = loadSound('611475__jwsounddesign__woosh-long-cinematic.wav');
   handPose = ml5.handPose({ flipped: true });
 }
 
