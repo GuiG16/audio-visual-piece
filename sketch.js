@@ -7,9 +7,12 @@ let hue = 0;
 let drawing = [];
 let showVideo = true;
 let sfx;
+let bgMusic;
 
+//Loading audio and AI model
 function preload() {
   sfx = loadSound('611475__jwsounddesign__woosh-long-cinematic.wav');
+  bgMusic = loadSound('monume-lofi-lofi-girl-lofi-chill-509453.mp3');
   handPose = ml5.handPose({ flipped: true });
 }
 
@@ -21,6 +24,7 @@ function goHands(results) {
   hands = results;
 }
 
+//Setting up canvas, video capture and hand capture
 function setup() {
   createCanvas(640, 480);
   video = createCapture(VIDEO, { flipped: true });
@@ -34,6 +38,7 @@ function setup() {
   strokeCap(ROUND);
 }
 
+//Draws line that changes colour gradually 
 function draw() {
     if (showVideo) {
     image(video, 0, 0);
@@ -79,6 +84,14 @@ function draw() {
     }
 }
 
+//Background music
+function mousePressed() {
+  if (!bgMusic.isPlaying()) {
+    bgMusic.loop();
+  }
+}
+
+//Background switcher
 function keyPressed() {
   if (key === 'v' || key === 'V') {
     showVideo = !showVideo;
